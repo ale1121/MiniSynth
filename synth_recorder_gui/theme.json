@@ -1,0 +1,46 @@
+{
+    "button":
+    {
+        "misc":
+        {
+            "shape": "rounded_rectangle",
+            "shape_corner_radius": "13",
+            "border_width": "1",
+            "shadow_width": "2"
+        }
+    },
+    "record-btn":
+    {
+        "colours":
+        {
+            "normal_bg": "#800000"
+        },
+        "misc":
+        {
+            "shape": "rounded_rectangle",
+            "shape_corner_radius": "13",
+            "border_width": "1",
+            "shadow_width": "2"
+        }
+    },
+    "panel":
+    {
+        "misc":
+        {
+            "shape": "rounded_rectangle",
+            "border_width": "1",
+            "shadow_width": "8",
+            "shape_corner_radius": "8"
+        }
+    },
+    "selection_list":
+    {
+        "misc":
+        {
+            "shape": "rounded_rectangle",
+            "border_width": "2",
+            "shadow_width": "2",
+            "shape_corner_radius": "8"
+        }
+    }
+}
