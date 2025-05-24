@@ -1,6 +1,6 @@
-synth_firmware/.pio
-synth_firmware/.vscode
+firmware/.pio
+firmware/.vscode
 
-synth_recorder_gui/__pycache__
-synth_recorder_gui/venv
-synth_recorder_gui/recordings
+recorder/__pycache__
+recorder/venv
+recorder/recordings
