@@ -1,6 +1,0 @@
-firmware/.pio
-firmware/.vscode
-
-recorder/__pycache__
-recorder/venv
-recorder/recordings
