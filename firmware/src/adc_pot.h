@@ -5,6 +5,6 @@
 
 void adc_init();
 
-uint16_t read_pot_value();
+float read_pot_value();
 
 #endif

@@ -34,7 +34,6 @@ unsigned long last_note_debounce_time = 0;
 
 bool record_mode = false;
 int prev_rec_btn_state = 1;
-unsigned long last_rec_debounce_time = 0;
 
 bool bt_connected = false;
 
@@ -97,7 +96,7 @@ void update_notes() {
 			// play selected note
 
 			// adjust pitch from potentiometer value
-			float pitch_shift = read_pot_value() / 10.0;
+			float pitch_shift = read_pot_value();
 			uint16_t freq = note_freqs[note] * pow(2, pitch_shift / 12.0);
 
 			play_note(freq);

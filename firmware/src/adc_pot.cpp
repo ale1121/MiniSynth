@@ -22,11 +22,9 @@ uint16_t read_adc() {
     return ADC;
 }
 
-inline long map(long x, long in_min, long in_max, long out_min, long out_max) {
-    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-}
-
-uint16_t read_pot_value() {
+float read_pot_value() {
     uint16_t pot_value = read_adc();
-    return map(pot_value, 0, 1023, 0, 120);    
+
+    // map to 0.0 - 12.0
+    return (pot_value * 12.0) / 1023.0;   
 }
