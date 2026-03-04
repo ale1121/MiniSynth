@@ -10,6 +10,7 @@ BPM = 120
 
 pause_event = Event()
 
+
 def save_recording(buffer):
     if not buffer:
         # dont save empty recordings
@@ -78,14 +79,38 @@ def get_recordings():
     return [f for f in os.listdir("recordings") if f.endswith(".mid")]
 
 
+def find_midi_output():
+    pygame.midi.init()
+    n = pygame.midi.get_count()
+    if n == 0:
+        return -1
+
+    default_id = pygame.midi.get_default_output_id()
+    if default_id != -1:
+        _, _, _, is_out, _ = pygame.midi.get_device_info(default_id)
+        if is_out:
+            return default_id
+        
+    for i in range(n):
+        _, _, _, is_out, _ = pygame.midi.get_device_info(i)
+        if is_out:
+            return i
+
+    return -1
+
+
 def play_recording(rec_name):
+    midi_out_id = find_midi_output()
+    if midi_out_id == -1:
+        print("Playback unavailable: no MIDI output devices found")
+        return
+    
     file_path = os.path.join("recordings", rec_name)
     if not os.path.exists(file_path):
         print("no such file")
         return
 
-    pygame.midi.init()
-    player = pygame.midi.Output(0)
+    player = pygame.midi.Output(midi_out_id)
     mid = MidiFile(file_path)
 
     for msg in mid.play():
@@ -99,7 +124,6 @@ def play_recording(rec_name):
             player.note_off(msg.note, msg.velocity)
 
     player.close()
-    pygame.midi.quit()
     pause_event.clear()
 
 
