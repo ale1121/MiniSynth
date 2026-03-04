@@ -21,9 +21,9 @@ The device is built on an ATmega328P (Arduino Nano) using direct AVR register ma
 
 ## Final device
 
-![](images/mini-synth-bare.png)
+<img src="images/mini-synth-bare.png" width="600">
 
-![](images/mini-synth-case.png)
+<img src="images/mini-synth-case.png" width="600">
 
 [Demo video](https://youtu.be/qJW-3LLUZFE)
 
@@ -46,7 +46,7 @@ The device is built on an ATmega328P (Arduino Nano) using direct AVR register ma
 
 ## Hardware Architecture
 
-![hardware diagram](images/hardware-diagram.png)
+<img src="images/hardware-diagram.png" width="800">
 
 ### Main components
 
@@ -57,6 +57,7 @@ The device is built on an ATmega328P (Arduino Nano) using direct AVR register ma
 * __USART0__ (9600 baud) - serial communication with HC-05 module
 * __HC-05 Bluetooth module__ - wireless transmission of structured note events
 * __ATmega328P__ (Arduino Nano) - main microcontroller
+
 
 ## Firmaware (C++/AVR)
 
@@ -105,8 +106,11 @@ Built with
 * Playback and recording management
 * Start/stop recording synchronization
 
-![record tab](images/record-tab.png)
-![recordings tab](images/recordings-tab.png)
+<img src="images/record-tab.png" width="600">
+
+<img src="images/recordings-tab.png" width="600">
+
+
 
 A small utility script (`recorder/find_ports.py`) lists all available serial ports
 
